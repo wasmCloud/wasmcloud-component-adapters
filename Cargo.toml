@@ -11,11 +11,13 @@ repository = "https://github.com/wasmCloud/wasmcloud-component-adapters"
 [badges.maintenance]
 status = "actively-developed"
 
+[target.'cfg(not(windows))'.build-dependencies]
+nix-nar = { workspace = true }
+
 [build-dependencies]
 anyhow = { workspace = true, features = ["std"] }
 base64 = { workspace = true }
 futures = { workspace = true, features = ["async-await", "std"] }
-nix-nar = { workspace = true }
 once_cell = { workspace = true }
 reqwest = { workspace = true, features = ["rustls-tls", "stream"] }
 serde = { workspace = true, features = ["derive"] }
