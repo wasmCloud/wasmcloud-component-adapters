@@ -512,25 +512,25 @@
     "wasi-preview1-command-component-adapter": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-KLCfdjd3d9DBFHrgBGgVZ/gg36lkmFy/Np/QDwY+WDQ=",
+        "narHash": "sha256-pcnCIDwsWy0V2MWmavXNLcyyBMIPGKBRx+x/PrMMXHc=",
         "type": "file",
-        "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v12.0.0/wasi_snapshot_preview1.command.wasm"
+        "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v12.0.1/wasi_snapshot_preview1.command.wasm"
       },
       "original": {
         "type": "file",
-        "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v12.0.0/wasi_snapshot_preview1.command.wasm"
+        "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v12.0.1/wasi_snapshot_preview1.command.wasm"
       }
     },
     "wasi-preview1-reactor-component-adapter": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-Mq+I5yicPKF5Lb40nirIGISEyoh297/1RqGThloZ8ZQ=",
+        "narHash": "sha256-7iJ8GD/tovVskf2rNUDhMa7qzLlmDLDYQL2hJU8zWuU=",
         "type": "file",
-        "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v12.0.0/wasi_snapshot_preview1.reactor.wasm"
+        "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v12.0.1/wasi_snapshot_preview1.reactor.wasm"
       },
       "original": {
         "type": "file",
-        "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v12.0.0/wasi_snapshot_preview1.reactor.wasm"
+        "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v12.0.1/wasi_snapshot_preview1.reactor.wasm"
       }
     }
   },
