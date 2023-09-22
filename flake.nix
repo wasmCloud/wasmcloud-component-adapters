@@ -14,9 +14,9 @@
 
   inputs.nixify.url = github:rvolosatovs/nixify;
   inputs.wasi-preview1-command-component-adapter.flake = false;
-  inputs.wasi-preview1-command-component-adapter.url = https://github.com/bytecodealliance/wasmtime/releases/download/v12.0.2/wasi_snapshot_preview1.command.wasm;
+  inputs.wasi-preview1-command-component-adapter.url = https://github.com/bytecodealliance/wasmtime/releases/download/v13.0.0/wasi_snapshot_preview1.command.wasm;
   inputs.wasi-preview1-reactor-component-adapter.flake = false;
-  inputs.wasi-preview1-reactor-component-adapter.url = https://github.com/bytecodealliance/wasmtime/releases/download/v12.0.2/wasi_snapshot_preview1.reactor.wasm;
+  inputs.wasi-preview1-reactor-component-adapter.url = https://github.com/bytecodealliance/wasmtime/releases/download/v13.0.0/wasi_snapshot_preview1.reactor.wasm;
 
   outputs = {
     nixify,
