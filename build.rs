@@ -172,20 +172,23 @@ async fn main() -> anyhow::Result<()> {
     println!("cargo:rerun-if-env-changed=WASI_PREVIEW1_COMMAND_COMPONENT_ADAPTER");
     println!("cargo:rerun-if-env-changed=WASI_PREVIEW1_REACTOR_COMPONENT_ADAPTER");
 
-    let out_dir = env::var("OUT_DIR")
-        .map(PathBuf::from)
-        .context("failed to lookup `OUT_DIR`")?;
-    try_join!(
-        upsert_artifact(
-            "WASI_PREVIEW1_COMMAND_COMPONENT_ADAPTER",
-            &WASI_PREVIEW1_COMMAND_COMPONENT_ADAPTER_LOCK,
-            out_dir.join("wasi_snapshot_preview1.command.wasm")
-        ),
-        upsert_artifact(
-            "WASI_PREVIEW1_REACTOR_COMPONENT_ADAPTER",
-            &WASI_PREVIEW1_REACTOR_COMPONENT_ADAPTER_LOCK,
-            out_dir.join("wasi_snapshot_preview1.reactor.wasm")
-        ),
-    )?;
+    #[cfg(feature = "build-adapters")]
+    {
+        let out_dir = env::var("OUT_DIR")
+            .map(PathBuf::from)
+            .context("failed to lookup `OUT_DIR`")?;
+        try_join!(
+            upsert_artifact(
+                "WASI_PREVIEW1_COMMAND_COMPONENT_ADAPTER",
+                &WASI_PREVIEW1_COMMAND_COMPONENT_ADAPTER_LOCK,
+                out_dir.join("wasi_snapshot_preview1.command.wasm")
+            ),
+            upsert_artifact(
+                "WASI_PREVIEW1_REACTOR_COMPONENT_ADAPTER",
+                &WASI_PREVIEW1_REACTOR_COMPONENT_ADAPTER_LOCK,
+                out_dir.join("wasi_snapshot_preview1.reactor.wasm")
+            ),
+        )?;
+    }
     Ok(())
 }
