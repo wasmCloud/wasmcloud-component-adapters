@@ -12,11 +12,11 @@ repository = "https://github.com/wasmCloud/wasmcloud-component-adapters"
 status = "actively-developed"
 
 [features]
-default = ["build-adapters"]
-build-adapters = []
+# skip fetching adapters (which requires network access)
+docs = []
 
 [package.metadata.docs.rs]
-no-default-features = true # skip building adapters (which requires internet access)
+features = ["docs"]
 
 [target.'cfg(not(windows))'.build-dependencies]
 nix-nar = { workspace = true }
