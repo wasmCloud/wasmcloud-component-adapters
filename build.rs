@@ -172,11 +172,23 @@ async fn main() -> anyhow::Result<()> {
     println!("cargo:rerun-if-env-changed=WASI_PREVIEW1_COMMAND_COMPONENT_ADAPTER");
     println!("cargo:rerun-if-env-changed=WASI_PREVIEW1_REACTOR_COMPONENT_ADAPTER");
 
-    #[cfg(feature = "build-adapters")]
-    {
-        let out_dir = env::var("OUT_DIR")
-            .map(PathBuf::from)
-            .context("failed to lookup `OUT_DIR`")?;
+    let out_dir = env::var("OUT_DIR")
+        .map(PathBuf::from)
+        .context("failed to lookup `OUT_DIR`")?;
+    if cfg!(feature = "docs") {
+        let path = out_dir.join("stub.wasm");
+        File::create(&path)
+            .await
+            .context("failed to create stub Wasm file")?;
+        println!(
+            "cargo:rustc-env=WASI_PREVIEW1_COMMAND_COMPONENT_ADAPTER={}",
+            path.display(),
+        );
+        println!(
+            "cargo:rustc-env=WASI_PREVIEW1_REACTOR_COMPONENT_ADAPTER={}",
+            path.display(),
+        );
+    } else {
         try_join!(
             upsert_artifact(
                 "WASI_PREVIEW1_COMMAND_COMPONENT_ADAPTER",
