@@ -12,11 +12,11 @@
     "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
   ];
 
-  inputs.nixify.url = github:rvolosatovs/nixify;
+  inputs.nixify.url = "github:rvolosatovs/nixify";
   inputs.wasi-preview1-command-component-adapter.flake = false;
-  inputs.wasi-preview1-command-component-adapter.url = https://github.com/bytecodealliance/wasmtime/releases/download/v14.0.0/wasi_snapshot_preview1.command.wasm;
+  inputs.wasi-preview1-command-component-adapter.url = "https://github.com/bytecodealliance/wasmtime/releases/download/v15.0.0/wasi_snapshot_preview1.command.wasm";
   inputs.wasi-preview1-reactor-component-adapter.flake = false;
-  inputs.wasi-preview1-reactor-component-adapter.url = https://github.com/bytecodealliance/wasmtime/releases/download/v14.0.0/wasi_snapshot_preview1.reactor.wasm;
+  inputs.wasi-preview1-reactor-component-adapter.url = "https://github.com/bytecodealliance/wasmtime/releases/download/v15.0.0/wasi_snapshot_preview1.reactor.wasm";
 
   outputs = {
     nixify,
