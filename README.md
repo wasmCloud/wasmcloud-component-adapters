@@ -9,3 +9,5 @@
 2. (If releasing)
    1. bump the Cargo.toml and Cargo.lock: `cargo build`
    1. Commit: build: vX.Y.Z
+   1. Merge PR
+   1. Publish crate: `cargo publish`
