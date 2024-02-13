@@ -1,6 +1,6 @@
 [package]
 name = "wasmcloud-component-adapters"
-version = "0.7.0"
+version = "0.8.0"
 description = "wasmCloud component adapters"
 authors = ["The wasmCloud Team"]
 categories = ["wasm"]
