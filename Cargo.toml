@@ -1,6 +1,6 @@
 [package]
 name = "wasmcloud-component-adapters"
-version = "0.11.0"
+version = "0.12.0"
 description = "wasmCloud component adapters"
 authors = ["The wasmCloud Team"]
 categories = ["wasm"]
@@ -11,39 +11,8 @@ repository = "https://github.com/wasmCloud/wasmcloud-component-adapters"
 [badges.maintenance]
 status = "actively-developed"
 
-[features]
-# skip fetching adapters (which requires network access)
-docs = []
-
-[package.metadata.docs.rs]
-features = ["docs"]
-
-[target.'cfg(not(windows))'.build-dependencies]
-nix-nar = { workspace = true }
-
-[build-dependencies]
-anyhow = { workspace = true, features = ["std"] }
-base64 = { workspace = true }
-futures = { workspace = true, features = ["async-await", "std"] }
-once_cell = { workspace = true }
-reqwest = { workspace = true, features = ["rustls-tls", "stream"] }
-serde = { workspace = true, features = ["derive"] }
-serde_json = { workspace = true, features = ["std"] }
-sha2 = { workspace = true }
-tempfile = { workspace = true }
-tokio = { workspace = true, features = ["fs", "macros", "rt-multi-thread"] }
-tokio-util = { workspace = true, features = ["io"] }
+[dependencies]
+wasi-preview1-component-adapter-provider = { workspace = true }
 
 [workspace.dependencies]
-anyhow = { version = "1", default-features = false }
-base64 = { version = "0.21", default-features = false }
-futures = { version = "0.3", default-features = false }
-nix-nar = { version = "0.2", default-features = false }
-once_cell = { version = "1", default-features = false }
-reqwest = { version = "0.11", default-features = false }
-serde = { version = "1", default-features = false }
-serde_json = { version = "1", default-features = false }
-sha2 = { version = "0.10", default-features = false }
-tempfile = { version = "3", default-features = false }
-tokio = { version = "1", default-features = false }
-tokio-util = { version = "0.7", default-features = false }
+wasi-preview1-component-adapter-provider = { version = "23.0.1", default-features = false }
